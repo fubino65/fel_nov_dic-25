@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="it">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>tabelle</title>
+    </head>
+
+    <body>
+        <h1>LE TABELLE</h1>
+        <h2>Struttura minimale</h2>
+        <table border><!--border è deprecato non usare mai. Lo uso qui per fini puramente didattici -->
+            <tr><!--Riga (table row) -->
+                <td><!--Cella (table data) -->
+                    cella 1
+                </td>
+                <td>cella 2</td>
+                <td>cella 3</td>
+                <td></td>
+            </tr>
+            <tr><!--Riga (table row) -->
+                <td>cella 1.1</td>
+                <td>cella 2.1</td>
+                <td>cella 3.1</td>
+                <td>cella 4.1</td>
+            </tr>
+            <tr><!--Riga (table row) -->
+                <td>cella 1.2</td>
+                <td>cella 2.2 larghina</td>
+                <td>cella 3.2</td>
+                <td>cella 4.2</td>
+            </tr>
+        </table>
+        <h2>Struttura semplice con intestazioni e titolo</h2>
+        <table border>
+            <caption>
+                <!--Titolo centrato. Posso scriverlo in un punto qualsiasi della tabella ma viene sempre posizionato in alto -->
+                Titolo tabella
+            </caption>
+            <tr>
+                <th>Intest.1</th><!--table heading -->
+                <th>Intest.2</th>
+                <th>Intest.3</th>
+                <th>Intest.4</th>
+            </tr>
+            <tr>
+                <td>cella 1</td>
+                <td>cella 2</td>
+                <td>cella 3</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>cella 1.1</td>
+                <td>cella 2.1</td>
+                <td>cella 3.1</td>
+                <td>cella 4.1</td>
+            </tr>
+            <tr>
+                <td>cella 1.2</td>
+                <td>cella 2.2 larghina</td>
+                <td>cella 3.2</td>
+                <td>cella 4.2</td>
+            </tr>
+        </table>
+        <br><br>
+        <p>le intestazioni possono essere anche verticali</p>
+        <table border>
+            <tr>
+                <th></th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td>2</td>
+                <td>4</td>
+                <td>6</td>
+                <td>8</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+            </tr>
+        </table>
+        <br><br>
+        <h2>Struttura completa con thead, tbody, tfoot</h2>
+        <table border>
+            <thead>
+                <tr>
+                    <th>Intest1</th>
+                    <th>Intest2</th>
+                    <th>Intest3</th>
+                    <th>Intest4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cella 1</td>
+                    <td>cella 2</td>
+                    <td>cella 3</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>cella 1.1</td>
+                    <td>cella 2.1</td>
+                    <td>cella 3.1</td>
+                    <td>cella 4.1</td>
+                </tr>
+                <tr>
+                    <td>cella 1.2</td>
+                    <td>cella 2.2 larghina</td>
+                    <td>cella 3.2</td>
+                    <td>cella 4.2</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Risultato celle</td>
+                </tr>
+            </tfoot>
+        </table>
+        <h2>Attributo colspan (si applica a th e td in orizzontale)</h2>
+        <table border>
+            <!-- <caption>Università TF</caption> -->
+            <thead>
+                <tr>
+                    <th colspan="4">Università TF</th>
+                </tr>
+                <tr>
+                    <!-- <th>Nome</th>
+                    <th>Cognome</th> -->
+                    <th colspan="2">Anagrafica</th>
+                    <th>Matricola</th>
+                    <th>Facoltà</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pinco Francesco Maria </td>
+                    <td>Pallino </td>
+                    <td>3213132131</td>
+                    <td>Giurisprudenza</td>
+                </tr>
+                <tr>
+                    <td>Pinca </td>
+                    <td>Pallino </td>
+                    <td>131313165849</td>
+                    <td>Medicina</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Attributo rowspan (si applica a th e td in verticale)</h2>
+        <table border>
+            <caption>Registro 2 Ippia</caption>
+            <thead>
+                <tr>
+                    <th colspan="2">Nome e Cognome</th>
+                    <th>Materia</th>
+                    <th>Voto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="4">Marta</td>
+                    <td rowspan="4">Gilarska</td>
+                    <td>Laboratorio</td>
+                    <td>80</td>
+                </tr>
+                <tr>
+                    <!-- <td>Marta</td>
+                    <td>Gilarska</td> -->
+                    <td>Inglese</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <!-- <td>Marta</td>
+                    <td>Gilarska</td> -->
+                    <td>Storia</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <!-- <td>Marta</td>
+                    <td>Gilarska</td> -->
+                    <td>Matematica</td>
+                    <td>70</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">Giacomo</td>
+                    <td rowspan="3">Vitta</td>
+                    <td>Laboratorio</td>
+                    <td>80</td>
+                </tr>
+                <tr>
+                    <!-- <td>Giacomo</td>
+                    <td>Vitta</td> -->
+                    <td>Inglese</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <!-- <td>Giacomo</td>
+                    <td>Vitta</td> -->
+                    <td>Storia</td>
+                    <td>60</td>
+                </tr>
+            </tbody>
+    </body>
+
+</html>

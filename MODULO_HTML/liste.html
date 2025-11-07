@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Liste</title>
+    </head>
+
+    <body>
+        <h1>LE LISTE</h1>
+        <!-- Liste non ordinate -->
+        <h2>Liste non ordinate (tag ul + tag li per i singoli elementi)</h2>
+        <h3>I figli diretti di una lista non ordinata possono essere solo li</h3>
+        <ul>
+            <li>elemento 1</li>
+            <li>elemento 2</li>
+            <li>elemento 3</li>
+            <li>elemento 4</li>
+            <li>elemento 5</li>
+        </ul>
+        <!-- Liste ordinate -->
+        <h2 id="a1">Liste ordinate (tag ol + tag li per i singoli elementi)</h2>
+        <h3> I figli diretti di una lista ordinata possono essere solo li</h3>
+        <!-- attr type determina il tipo di indice. Di default è numerico crescente. Però specificandolo posso scegliere fra altre opzioni. Per vedere le opzioni ctrl+space  -->
+
+        <!-- <ol type="a" reversed> reeversed per invertire l'ordine degli indici -->
+
+        <ol type="a">
+            <li>argomento 1</li>
+            <li>argomento 2</li>
+            <li>argomento 3</li>
+        </ol>
+        <!-- Liste di definizione -->
+        <h2>Liste di definizione (tag dl + dt(definition term) e dd(definition description))</h2>
+        <h3>N.B. dt e dd sono entrambi figli diretti di dl, quindi fratelli fra di loro</h3>
+        <dl>
+            <dt>HTML</dt>
+            <dd>Hypertext Markup Language</dd>
+            <dd>Il linguaggio standardd per la creazione di pagine web</dd>
+            <dt>CSS</dt>
+            <dd>Cascading Style Sheets</dd>
+            <dd>Linguaggio utilizzato per definire la formattazione e lo stile delle pagine html</dd>
+            <dt>JAVASCRIPT</dt>
+            <dd>Linguaggio di programmazione frontend per aggiungere interattività alle pagine web</dd>
+        </dl>
+
+        <!-- Liste annidate -->
+        <h2>Esempio di liste annidate</h2>
+        <h3>I nostri cantanti preferiti</h3>
+        <ol>
+            <li>Lady Gaga
+                <ul>
+                    <li>Paparazzi</li>
+                    <li>Born this way</li>
+                    <li>Abracadabra</li>
+                </ul>
+            </li>
+            <li>Elisa
+                <ul>
+                    <li>Gli ostacoli del cuore</li>
+                    <li>Anche fragile</li>
+                    <li>A modo tuo</li>
+                </ul>
+            </li>
+            <li><b>Witney Houston</b>
+                <ul>
+                    <li>I have nothing</li>
+                    <li>I will always love you</li>
+                    <li>I look to you</li>
+                </ul>
+            </li>
+        </ol>
+    </body>
+
+</html>

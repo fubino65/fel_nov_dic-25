@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="it">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Argomenti generici</title>
+        <link rel="shortcut icon" href="https://thunderbit.com/logo/favicon.ico" type="image/x-icon">
+
+    </head>
+
+    <body>
+        <h1>Argomenti generici</h1>
+        <ul>
+            <li>
+                <h2>Commenti</h2>
+                <p>&lt;!-- testo del commento --&gt;</p>
+            </li>
+            <li>
+                <h2>Div</h2>
+                <p>Ha la funzione di contenitore, qualcosa che definisce una porzione di pagina, un insieme di elementi.
+                    E' di tipo blocco quindi si riserva tutta la larghezza del viewport o
+                    dell'elemento che li contiene
+                    mentre se non viene specificata l'altezza è pari all'altezza del contenuto. Se non c'è contenuto è
+                    pari a 0, cioè è completamente piatto. A differenza di altri tag di tipo blocco per il div lo
+                    stylesheet del browser non prevede margini verticali</p>
+            </li>
+            <li>
+                <h2>span</h2>
+                <p>E' di tipo inline. In genere serve per delimitare del testo all'interno di altro testo. Oppure per
+                    contenere del testo che non deve essere in un elemento di tipo blocco</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    <span><strong>
+                            porzione di testo dentro span</strong></span> Est reprehenderit impedit modi incidunt
+                    eveniet.
+                </p>
+            </li>
+            <li>
+                <h2>Favicon</h2>
+                <p>E' l'iconcina che viene visualizzata nella tab della scheda del browser prima del title. Per
+                    inserirla con vsc scrivere link:f nella head e poi dare invio</p>
+            </li>
+            <li>
+                <h2>Horizontal Rule</h2>
+                <p>tag hr (self closing)</p>
+                <hr>
+            </li>
+            <li>
+                <h2>Break Rule (a capo)</h2>
+                <p>tag br (self closing)</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum natus nemo ut quaerat laborum non
+                    <strong>prima di br</strong>
+                    <br>
+                    <strong>dopo br</strong>
+                    dignissimos animi doloribus hic ipsum modi perferendis officiis labore eius, dolorum ipsa, nihi
+                    similique quisquam.
+                </p>
+            </li>
+            <li>
+                <h2>Entities &sigla;</h2>
+                &amp;lt; = &lt; (less than)
+                <br>
+                &amp;gt; = &gt; (greater than)
+                <br>
+                &amp;copy; = &copy;
+                <br>
+                &amp;euro; = &euro;
+                <br>
+                &amp;Egrave; = &Egrave;
+                <br>
+                &amp;nbsp; = spazio
+
+                <p>Se volessi scrivere oggi + dieci spazi + piove il browser non renderizzerebbe dieci spazi bensì
+                    sempre solo 1. Nel caso abbia bisogno di renderizzare più di uno spazio devo usare l'entity
+                    &amp;nbsp;</p>
+                <p>oggi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; piove</p>
+                <p>Per un elenco completo delle sigle che si possono utilizzare nelle entities vedere <a
+                        href="https://html.spec.whatwg.org/multipage/named-characters.html#named-character-references"
+                        target="_blank">qui</a>
+                </p>
+            </li>
+        </ul>
+    </body>
+
+</html>

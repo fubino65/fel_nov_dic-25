@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>links</title>
+    </head>
+
+    <body>
+        <h1>I LINK (tag a (anchor) )</h1>
+        <h2>attr href rappresenta il percorso RELATIVO della risorsa linkata</h2>
+        <ul>
+            <li>
+                <h3 id="a1">(anchor1)Link che porta a una pagina interna del sito aprendola nella stessa scheda del
+                    browser</h3>
+                <a href="liste.html">vai alle liste</a>
+                <a href="headings.html">vai a heading</a>
+                <p>Osserva: i due link si dispongono uno di fianco all'altro, perché sono di tipo inline</p>
+            </li>
+            <li>
+                <h3 id="a2">(anchor2)Link che porta a una pagina interna del sito aprendola in una nuova scheda del
+                    browser (attr
+                    target="_blank")</h3>
+                <a href="esercizioListeEFormattazioneCorretto.html" target="_blank"
+                    rel="noopener noreferrer">Formattazioni in html</a>
+                <!-- rel="noopener noreferrer" garantisce una maggiore sicurezza quando si usa il target _blank -->
+            </li>
+            <li>
+                <h3>Link che porta a una pagina esterna al progetto (di solito si fa aprire in una nuova scheda del
+                    browser)</h3>
+                <a href="https://www.canisociali.org/project/il-cane-sociale-a-scuola/" target="_blank">Scopri i cani a
+                    scuola</a>
+            </li>
+            <li>
+                <h3>Link che ricarica la pagina corrente (href="#")</h3>
+                <a href="#">Ricarica pagina</a>
+            </li>
+            <li>
+                <h3>Link che riporta all'inizio della pagina (href="#top")</h3>
+                <a href="#top" title="Torna a inizio pagina">Torna all'inizio</a>
+            </li>
+            <li>
+                <h3>Link bookmark o segnaposto (href="#nomeId")</h3>
+                <a href="#a1">anchor 1</a>
+                <a href="#a2">anchor 2</a>
+                <p>Posso anche linkare una sezione precisa di un'altra pagina sia interna che esterna</p>
+                <a href="liste.html#a1" target="_blank">Liste ordinate</a>
+                <a href="https://it.wikipedia.org/wiki/Foro_Romano#Periodo_regio">Periodo regio</a>
+            </li>
+            <li>
+                <h3>Link che permette di chiamare direttamente un numero telefonico (href="tel:numtelefono")</h3>
+                <a href="tel:+393406405152">Chiama Fulvia</a>
+            </li>
+            <li>
+                <h3>Link che permette di aprire il client di posta predefinito in modalità scrivi mail con impostato uno
+                    o più destinatari (href="mailto:pippo@gmail.com,info@pippo.com")</h3>
+                <a href="mailto:pippo@gmail.com,  info@pippo.com">Scrivici una mail</a>
+            </li>
+            <li>
+                <h3>Link che permette di avviare una chat di whatsapp (href="https://wa.me/numeroTelefono")</h3>
+                <a href="https://wa.me/00393519043550">Chatta con Fulvia</a>
+            </li>
+            <li>
+                <h3>Apertura di un file</h3>
+                <a href="ASSETS/MEDIA/Introduzione_ux_ui.pdf" target="_blank">apri pdf</a>
+            </li>
+            <li>
+                <h3>Effettuare il download di un file (attr download)</h3>
+                <!-- Con l'attributo download booleano viene scaricato il file o aperta la finestra sfoglia a seconda delle impostazioni del browser mantenendo il nome originale del file -->
+                <a href="ASSETS/MEDIA/Introduzione_ux_ui.pdf" download>scarica pdf</a>
+                <h3>Effettuare il download di un file modificandone il nome (attr download="nome file")</h3>
+                <!-- Se valorizzo l'attributo download con un nome che scelgo io per il file funziona come sopra ma preimposta il nome del file con quello scelto e non quello originale -->
+                <a href="ASSETS/MEDIA/Introduzione_ux_ui.pdf" download="Impara_ux_e_ui_in_20_minuti.pdf">scarica pdf</a>
+            </li>
+        </ul>
+    </body>
+
+</html>
