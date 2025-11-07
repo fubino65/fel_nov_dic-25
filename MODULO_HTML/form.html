@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="it">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form</title>
+    </head>
+
+    <body>
+        <h1>I FORM</h1>
+        <h2>Modulo di iscrizione al corso XYZ</h2>
+        <!-- action = url generalmente backend che viene chiamata con la submit -->
+        <!-- metodo get accoda tutti i parametri in chiaro nella url NON USARE
+          La usiamo ora per comodità di lettura dei parametri -->
+        <form action="pippo.php" method="get">
+            <label
+                for="nome">Nome</label><!--L'attr for della label deve essere valorizzato con l'id del campo a cui si riferisce-->
+            <!-- N.B. l'attr name deve esserci sempre ed essere sempre valorizzato perchè è quello che darà il nome al parametro passato. Se manca il name non sarà passato alcun parametro per quel campo -->
+            <input type="text" name="firstname" id="nome" placeholder="Il tuo nome"><!--scrivi in + invio in vsc-->
+            <label for="cognome">Cognome</label>
+            <input type="text" name="cognome" id="cognome">
+            <br>
+            <input type="submit" value="Iscriviti">
+
+        </form>
+
+    </body>
+
+</html>
