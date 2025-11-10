@@ -13,18 +13,103 @@
         <!-- action = url generalmente backend che viene chiamata con la submit -->
         <!-- metodo get accoda tutti i parametri in chiaro nella url NON USARE
           La usiamo ora per comodità di lettura dei parametri -->
-        <form action="pippo.php" method="get">
-            <label
-                for="nome">Nome</label><!--L'attr for della label deve essere valorizzato con l'id del campo a cui si riferisce-->
-            <!-- N.B. l'attr name deve esserci sempre ed essere sempre valorizzato perchè è quello che darà il nome al parametro passato. Se manca il name non sarà passato alcun parametro per quel campo -->
-            <input type="text" name="firstname" id="nome" placeholder="Il tuo nome"><!--scrivi in + invio in vsc-->
-            <label for="cognome">Cognome</label>
-            <input type="text" name="cognome" id="cognome">
-            <br>
+        <!-- <form action="" method="get"> con validazioni attive-->
+        <form action="" method="get" novalidate> <!-- no validate annulla le validazioni automatiche del form html-->
+            <input type="hidden" name="provenienza" value="paginax">
+            <!-- campi hidden servono a passare informazioni di servizio di all'utente non importa nulla quindi è bene che siano visibili -->
+            <fieldset>
+                <legend>Dati anagrafici</legend>
+                <div>
+                    <!--L'attr for della label deve essere valorizzato con l'id del campo a cui si riferisce-->
+                    <!-- N.B. l'attr name deve esserci sempre ed essere sempre valorizzato perchè è quello che darà il nome al parametro passato. Se manca il name non sarà passato alcun parametro per quel campo -->
+                    <label for="nome">Nome*:</label>
+                    <input type="text" name="firstname" id="nome" placeholder="Il tuo nome" autofocus
+                        required><!--scrivi in + invio in vsc-->
+                    <label for="cognome">Cognome*:</label>
+                    <input type="text" name="cognome" id="cognome" required>
+                </div>
+                <div>
+                    <label for="email">Email*:</label>
+                    <input type="email" name="email" id="email" required>
+                    <label for="pwd">Password*</label>
+                    <input type="password" name="pwd" id="pwd" required>
+                </div>
+                <div>
+                    <label for="eta">Età</label>
+                    <input type="number" name="eta" id="eta" min="18" max="30">
+                    <label for="dataNascita">Data di nascita</label>
+                    <input type="date" name="dataNascita" id="dataNascita">
+                    <label for="tel">Telefono</label>
+                    <input type="tel" name="tel" id="tel">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Preferenze corso</legend>
+                <div>
+                    <span>Scegli il livello</span>
+                    <br>
+                    <!-- I radio buttons sono mutuamente esclusivi. Questo è reso possibile dal fatto che condividono lo stesso name. Se metto name diversi non saranno più legati fra di loro -->
+                    <input type="radio" name="livello" id="base" value="b"
+                        checked><!--Se voglio pre selezionare un radio button aggiungo l'attr. booleano checked-->
+                    <label for="base">Base</label>
+                    <input type="radio" name="livello" id="intermedio" value="i">
+                    <label for="intermedio">Intermedio</label>
+                    <input type="radio" name="livello" id="avanzato" value="a">
+                    <label for="avanzato">Avanzato</label>
+                    <!-- N.B. specificare per ogni radio il value altrimenti se viene selezionato uno dei tre verrà passato livello=on ma non saprò quale opzione è stata scelta -->
+                    <!-- Per rendere obbligatoria la scelta di una opzione aggiungere l'attr required a uno dei radio buttons -->
+                </div>
+                <div>
+                    <br>
+                    <span>A quali linguaggi sei interessato?</span>
+                    <br>
+                    <input type="checkbox" name="linguaggio" id="html" value="html" checked>
+                    <label for="html">HTML</label>
+                    <br>
+                    <input type="checkbox" name="linguaggio" id="css" value="css" checked>
+                    <label for="css">CSS</label>
+                    <br>
+                    <input type="checkbox" name="linguaggio" id="js" value="js">
+                    <label for="js">Javascript</label>
+                    <br>
+                    <input type="checkbox" name="linguaggio" id="php" value="php">
+                    <label for="php">PHP</label>
+                </div>
+                <div>
+                    <label for="giorno">Giorno preferito</label>
+                    <br>
+                    <!-- MENU A TENDINA A SCELTA SINGOLA -->
+                    <select name="giorno" id="giorno">
+                        <option value="">Scegli giorno</option>
+                        <option value="lu">Lunedì</option>
+                        <option value="ma">Martedì</option>
+                        <option value="me">Mercoledì</option>
+                        <option value="gio">Giovedì</option>
+                        <option value="ve">Venerdì</option>
+                        <option value="sa">Sabato</option>
+                    </select>
+                    <!-- N.B. ricordare che il valore che viene passato non è quello visualizzato dall'utente ma quello specificato nel value -->
+                </div>
+                <div>
+                    <!-- MENU A TENDINA A SCELTA MULTIPLA -->
+                    <label for="orario">Fascia oraria</label>
+                    <br>
+                    <select name="orario" id="orario" multiple size="1">
+                        <option value="am">Mattina 9-12</option>
+                        <option value="pm">Pomeriggio 14-17</option>
+                        <option value="sera">Sera 19-22</option>
+                    </select>
+                </div>
+                <label for="note">Scrivi eventuali note</label>
+                <br>
+                <textarea name="note" id="note" cols="40" rows="7" maxlength="100">
+                </textarea>
+                <!-- cols definisce la larghezza espressa in numero di colonne -->
+                <!-- rows definisce l'altezza espressa in numero di righe -->
+                <!-- Per limitare il numero di caratteri non solo nella textarea usare attr maxlength -->
+            </fieldset>
             <input type="submit" value="Iscriviti">
-
         </form>
-
     </body>
 
 </html>
