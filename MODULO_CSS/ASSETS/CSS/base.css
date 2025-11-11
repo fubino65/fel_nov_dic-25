@@ -1,0 +1,77 @@
+/* NEI FILE CSS NON DEVE MAI ESSERCI IL TAG STYLE PERCHè E' UN TAG HTML */
+
+h1 {
+  color: crimson;
+  text-align: center;
+}
+
+h2 {
+  color: blue;
+}
+
+h3 {
+  color: fuchsia;
+}
+
+h3 {
+  color: yellowgreen;
+}
+
+section p {
+  border: 2px solid black;
+}
+
+div > p {
+  font-weight: bolder;
+}
+
+#terzoh2 {
+  border: 2px solid crimson;
+  border-radius: 10px;
+}
+
+.evidenziato {
+  background-color: yellow;
+}
+
+.quadrato {
+  border: 1px solid #000;
+  width: 100px;
+  height: 100px;
+}
+#box1 {
+  background-color: red;
+}
+#box2 {
+  background-color: green;
+}
+#box3 {
+  background-color: blue;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+#sect1 {
+  border: 3px solid red;
+}
+a {
+  text-decoration: none;
+  color: chocolate;
+  font-weight: bold;
+}
+a:hover {
+  color: red;
+}
+#sect2 {
+  border: 3px solid blue;
+}
+
+#sect2 img {
+  width: 300px;
+  border-radius: 10px;
+}
+#sect2 img:hover {
+  opacity: 0.8;
+}
