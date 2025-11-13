@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../FONTS/Lato/Lato-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../FONTS/Lato/Lato-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../FONTS/Lato/Lato-Italic.ttf');
+  font-weight: 400;
+  font-style: italic;
+}
+
+html {
+  font-size: 30px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+#titleContainer {
+  font-size: 20px;
+}
+
+#titleContainerFiglia {
+  font-size: 10px;
+  padding: 3em;
+}
+h1 {
+  font-size: 6em;
+}
+
+h2 {
+  font-size: 2.5em;
+}
+
+h3 {
+  font-size: 2rem;
+  background-color: rgba(0, 255, 255, 0.5);
+}
+.spiegazione {
+  background-color: #ffff00;
+}
+
+figure {
+  border: 3px solid red;
+  /* padding: 30px;    */
+  /* width: 50vw; */
+  width: 500px;
+  min-width: 375px;
+  height: 50vh;
+}
+
+figure img {
+  height: 100%;
+  width: 100%;
+}
