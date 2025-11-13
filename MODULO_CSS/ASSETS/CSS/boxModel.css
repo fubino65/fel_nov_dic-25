@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3 {
+  font-size: 3em;
+}
+body {
+  padding: 20px 50px;
+}
+h2 {
+  margin: 15px 0;
+}
+
+h3 {
+  margin: 20px 0;
+}
+#container1 * {
+  /* border: 2px solid red; */
+  background-color: aqua;
+  padding: 10px 15px;
+}
+
+/* PADDING */
+#container1 {
+  border: 2px solid #000;
+  /* Sintassi esplosa */
+  padding-top: 50px;
+  padding-right: 100px;
+  padding-bottom: 200px;
+  padding-left: 80px;
+  /* Sintassi shorthand top/bottom right/left */
+  padding: 30px 50px;
+  /* Sintassi shorthand top right bottom left */
+  padding: 30px 50px 30px 50px;
+  padding: 50px 100px 200px 80px;
+  /* Sintassi unico valore che vale per tutti i lati */
+  padding: 50px;
+}
+
+#container1 p {
+  margin-top: 20px;
+}
+
+#containerBb,
+#containerCb {
+  border: 1px solid #000;
+  text-align: center;
+  padding: 100px;
+  width: 1000px;
+}
+
+aside {
+  background-color: aqua;
+  height: 200px;
+}
+
+#containerBb {
+  box-sizing: border-box;
+}
+
+#containerCb {
+  box-sizing: content-box;
+}
+
+#spiegazione {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 20px 0;
+  background-color: yellow;
+  padding: 20px;
+}
+
+/* ESEMPIO CON BOTTONI */
+button {
+  width: 70px;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 10px 0;
+}
+
+.cb {
+  box-sizing: content-box;
+}
