@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+#container {
+  border: 2px solid red;
+  display: flex;
+  min-height: 800px;
+  /* display: flex deve essere assegnato al GENITORE e ha effetto SOLO sui FIGLI (non sui nipoti) */
+
+  /*ASSI PRINCIPALI  */
+  flex-direction: row; /*asse principale di DEFAULT orizzontale da sinistra verso destra  */
+  flex-direction: column; /*asse principale verticale dall'alto verso il basso  */
+  flex-direction: row-reverse; /*asse principale orizzontale da destra verso sinistra  */
+  flex-direction: column-reverse; /*asse principale verticale dal basso verso l'alto */
+
+  flex-direction: row;
+
+  /* DISTANZIAMENTO DEGLI ELEMENTI FRA DI LORO (GAP) */
+  gap: 1.2rem;
+
+  /* DISTRIBUZIONE DEGLI ELEMENTI RISPETTO ALL'ASSE PRINCIPALE (justify-content) */
+  justify-content: flex-start; /*default*/
+  justify-content: flex-end;
+  justify-content: center;
+  gap: 0; /*annullo il gap perchè interferirebbe sulle distanze calcolate automaticamente che vediamo nelle prossime righe di codice*/
+  justify-content: space-around;
+  justify-content: space-between;
+  justify-content: space-evenly;
+
+  /* DISTRIBUZIONE DEGLI ELEMENTI RISPETTO ALL'ASSE SECONDARIO (align-items) */
+  align-items: center;
+  align-items: flex-end;
+  align-items: flex-start;
+
+  /* align-items: baseline; */
+
+  /* DISTRIBUZIONE SU PIU' COLONNE O PIU' RIGHE DEL CONTENUTO QUANDO SUPERA LE DIMENSIONI DEL CONTENITORE (flex-wrap + align-content) */
+  flex-wrap: nowrap; /*default: comprime il contenuto anche se è più grande del contenitore*/
+  flex-wrap: wrap-reverse; /*distribuisce su più righe o colonne quando il contenuto è più grande del contenitore*/
+  /* flex-wrap: wrap-reverse; esiste anche il wrap-reverse */
+  /* align-content: space-between;
+  align-content: center; */
+}
+
+.quadrato {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000;
+  background-color: #ffff00;
+}
+
+#container2 {
+  border: 2px solid #0000ff;
+  height: 500px;
+  display: flex;
+}
+#container2 span {
+  height: 2em;
+  background-color: #ffff00;
+}
+
+#container3 {
+  border: 2px solid #ff0000;
+  height: 500px;
+  display: flex;
+  gap: 20px;
+}
+
+#container3 :first-child {
+  order: -1;
+  align-self: center;
+}
+
+#container3 :nth-child(2) {
+  order: -2;
+  flex-grow: 2;
+}
+
+#container3 :nth-child(5) {
+  flex-grow: 1;
+}
+
+#container4 {
+  border: 2px solid #0000ff;
+  display: flex;
+  height: 400px;
+}
+#container4 article:first-child {
+  border: 2px solid #ff0000;
+  flex-basis: 30%;
+}
+#container4 article:last-child {
+  border: 2px solid #ff0000;
+  flex-basis: 70%;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+#container4 article img {
+  width: 100%;
+  height: 100%;
+  vertical-align: bottom;
+  object-fit: cover;
+}
