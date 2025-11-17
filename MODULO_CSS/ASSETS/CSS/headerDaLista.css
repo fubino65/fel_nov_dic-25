@@ -37,11 +37,15 @@
 }
 
 #header2 {
+  background-color: white;
   padding: 30px;
   display: flex;
   align-items: center;
-  width: 80%;
+  width: 100%;
   margin: auto;
+  position: sticky;
+  top: 0;
+  border-bottom: 2px solid gray;
 }
 
 #header2 #logo2 {

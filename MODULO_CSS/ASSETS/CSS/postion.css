@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.quadrato {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#box1 {
+  background-color: red;
+}
+#box2 {
+  background-color: green;
+  position: relative; /*relativo alla posizione naturale dell'elemento all'interno del flusso del documento*/
+  top: 50px;
+  left: 50px;
+  z-index: -10;
+}
+#absoluteAssist {
+  width: 250px;
+  height: 150px;
+  border: 2px solid red;
+  position: relative; /*serve come riferimento per il position absolute del box 3 che è nipote*/
+}
+
+#absoluteAssist > div {
+  /*e' padre quindi antenato del box 3 ma non essendo posizionato viene ignorato ai fini del position absolute*/
+  width: 150px;
+  height: 110px;
+  border: 2px solid blue;
+}
+
+#box3 {
+  background-color: yellow;
+  /* z-index: 1000; non ha effetto perchè la position dell'elemento è static*/
+  position: absolute; /*esce dal flusso. GLi altri elementi non lo considerano. Si posiziona (se valorizzo top left... rispetto al primo antenato posizionato, se non c'è si posiziona rispetto al viewport)*/
+  z-index: -5;
+  bottom: 0;
+  right: 0;
+}
+#box4 {
+  background-color: blue;
+  position: fixed; /*esce dal flusso e rimane fisso anche allo scrollare della pagina*/
+  top: 130px;
+}
+#box5 {
+  background-color: pink;
+  position: sticky;
+  top: 0px;
+}
