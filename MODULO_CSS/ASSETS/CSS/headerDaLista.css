@@ -59,3 +59,37 @@
 .fa-brands {
   font-size: 25px;
 }
+
+/* HERO */
+#hero {
+  width: 100%;
+  min-height: 600px;
+  border: 1px solid #000;
+  background-image: url('../MEDIA/CopertinaPersone.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#wrapper {
+  padding: 50px 20px;
+  display: flex;
+  gap: 30px;
+}
+
+.half {
+  flex-basis: 50%;
+  border-radius: 10px;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#wrapper :first-child {
+  background-image: url(../MEDIA/Copertina-conteggio.png);
+}
+
+#wrapper :last-child {
+  background-image: url(../MEDIA/vita-sottomarina-delle-maldiveCSS.jpg);
+}
