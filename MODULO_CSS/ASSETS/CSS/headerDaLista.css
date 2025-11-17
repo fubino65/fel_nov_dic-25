@@ -5,29 +5,53 @@
 }
 
 #header1 {
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   padding: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 80%;
-  /* margin: auto; */
+  margin: auto;
 }
-#header1 #logo img {
+#header1 #logo img,
+#header2 #logo2 img {
   height: 35px;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
+  display: block; /*per centrare correttamente l'immagine trasformarla in blocco (non inline-block)*/
 }
 
-#header1 nav {
+/* #header1 nav {
   border: 1px solid #000;
-}
-#header1 nav ul {
+} */
+#header1 nav ul,
+#header2 nav ul {
   list-style: none; /*rimuove i pallini dalla lista*/
   display: flex;
   gap: 20px;
 }
 
-#header1 nav ul li a {
+#header1 nav ul li a,
+#header2 nav ul li a {
   text-decoration: none; /*rimuove la sottolineatura dei link*/
   color: #565656;
+}
+
+#header2 {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+}
+
+#header2 #logo2 {
+  flex-grow: 1;
+}
+
+#header2 nav {
+  margin-left: 30px;
+}
+
+.fa-brands {
+  font-size: 25px;
 }
