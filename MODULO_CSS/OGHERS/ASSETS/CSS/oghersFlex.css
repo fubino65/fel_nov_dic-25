@@ -1,0 +1,242 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-principale);
+}
+
+header {
+  border: 1px solid #000;
+  padding: 40px var(--boxed-horizontal-padding) 64px var(--boxed-horizontal-padding);
+  font-family: var(--font-secondario);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#logo h1 a {
+  font-size: 60px;
+  line-height: 72px;
+  text-decoration: none;
+  color: #000;
+}
+#logo span {
+  line-height: 29px;
+}
+
+#menu ul {
+  /* border: 2px solid red; */
+  list-style: none;
+  display: flex;
+
+  gap: 16px;
+}
+
+#menu ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+#menu ul li a:hover {
+  color: var(--titoli--hover);
+}
+
+#icone {
+  /* border: 2px solid blue; */
+  display: flex;
+  gap: 8px;
+}
+
+#icone a,
+#toTop {
+  background: var(--gradient-bkg);
+  border-radius: 50%;
+  text-decoration: none;
+  color: #fff;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main,
+footer {
+  padding: 0 var(--boxed-horizontal-padding);
+}
+/* EVIDENZA SECTION */
+#evidenzaSection {
+  /* border: 1px solid #000; */
+  background-color: var(--background--color_secondary);
+  padding: 20px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 3px 12px -1px rgba(7, 10, 25, 0.2), 0 22px 27px -20px rgba(7, 10, 25, 0.2);
+  box-shadow: 0 3px 12px -1px rgba(7, 10, 25, 0.2), 0 22px 27px -20px rgba(7, 10, 25, 0.2);
+  margin: 250px 0;
+}
+
+#evidenzaSection p {
+  font-family: var(--font-secondario);
+  font-size: 20px;
+  font-weight: 700;
+  padding: 5px 0;
+  position: relative; /*server per il position absolute della righetta colorata #evidenzaSection p::after*/
+}
+
+#evidenzaSection p::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 80px;
+  height: 3px;
+  background: var(--gradient-bkg);
+}
+
+#anteprimeSection {
+  /* border: 1px solid #000; */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+#anteprimeSection article {
+  border: 1px solid #000;
+  flex-basis: 24%;
+  height: 200px;
+  border-radius: 10px;
+  padding: 20px;
+  /* spingo h2 e h3 verso il basso */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start; /*senza questa proprietà il background prendeva tutta la larghezza dell'article perchè di default align-items è stretch*/
+  gap: 15px;
+  /* proprietà comuni alle immagini di background */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  position: relative; /*serve per il position absolute dell'overlay*/
+  transition: all 1s ease;
+}
+
+/* realizzazione di un overlay */
+#anteprimeSection article::after {
+  content: '';
+  position: absolute;
+  /* right: 0;
+  bottom: 0;*/
+  top: 0;
+  left: 0;
+  /* width e height a 100% sostiuiscono right e bottom a 0 */
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%);
+  border-radius: 10px;
+}
+
+#anteprimeSection article:hover {
+  transform: translateY(-10px);
+}
+
+.categoria {
+  font-size: 14px;
+  background: var(--gradient-bkg);
+  padding: 4px 8px;
+  border-radius: 3px;
+}
+
+#anteprimeSection article h3 {
+  font-family: var(--font-secondario);
+  font-size: 18px;
+  z-index: 10;
+}
+
+#anteprimeSection article h3:hover {
+  color: var(--titoli--hover);
+}
+
+#primo {
+  background-image: url(../MEDIA/integratori-per-il-benessere-quotidiano.webp);
+}
+
+#secondo {
+  background-image: url(../MEDIA/Centered_Star_Anise_Blog_Image.jpg);
+  /* background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; */
+}
+#terzo {
+  background-image: url(../MEDIA/pilates-per-principianti.webp);
+}
+#quarto {
+  background-image: url(../MEDIA/A_close-up_of_fresh_mint_leaves_beside_a_steaming_.jpeg);
+}
+
+/***************FOOTER **************/
+
+#topFooter {
+  padding-top: 30px;
+  padding-bottom: 50px;
+  background-color: #0f1012;
+  color: #fff;
+}
+
+#topFooter span {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: var(--font-secondario);
+}
+#topFooter p {
+  margin-top: 10px;
+}
+
+#bottomFooter {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #000000;
+  color: #bbb;
+}
+
+#bottomFooter nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #bbb;
+}
+
+#toTop {
+  border: 1px solid #000;
+  position: fixed;
+  bottom: 15px;
+  right: 20px;
+}
+
+footer a:hover {
+  color: var(--titoli--hover);
+}
+#bottomFooter span a:hover {
+  text-decoration: underline;
+}
+
+/* CUSTOM PROPERTIES */
+:root {
+  --font-principale: 'Rubik', sans serif;
+  --font-secondario: 'Josefin Sans', sans serif;
+  --gradient-bkg: linear-gradient(90deg, #89216b 0%, #da4453 100%);
+  --boxed-horizontal-padding: 13%;
+  --background--color_secondary: #fffaf4;
+  --titoli--hover: #6f1c56;
+}
