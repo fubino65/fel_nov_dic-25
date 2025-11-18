@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+#btn1 {
+  margin: 20px;
+  width: 150px;
+  height: 40px;
+  background-color: coral;
+  border: 2px solid coral;
+  color: #fff;
+
+  /* La transizione va sempre messa sull'elemento e non nella pseudo classe (hover) altrimenti funziona in entrata ma non in uscita */
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+
+  /* sintassi shorthand */
+  transition: all 0.3s ease;
+
+  /* transition-property: background-color;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out; */
+  /* transition-delay: 0.5s; */
+}
+
+#btn1:hover {
+  border-radius: 15px;
+  background-color: #fff;
+  color: coral;
+  font-weight: bold;
+}
+
+#box1 {
+  border: 1px solid #000;
+  height: 100px;
+  width: 150px;
+  background-image: url(../MEDIA/CopertinaPersone.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+}
+
+.buttonTransition {
+  transition: all 0.3s ease;
+}
+
+#box1:hover {
+  background-position: top;
+}
+
+#btn2 {
+  margin: 20px;
+  width: 150px;
+  height: 40px;
+  background-color: blue;
+  color: #fff;
+  border: 1px solid blue;
+}
+#btn2:hover {
+  border-radius: 3px;
+  background-color: rgba(0, 0, 255, 0.761);
+}
+
+#box2,
+#box3,
+#box4,
+#box5,
+#box6 {
+  width: 150px;
+  height: 150px;
+  background-color: crimson;
+}
+
+#box2:hover {
+  transform: translateY(150px);
+  transform: translateX(150px);
+  transform: translate(50px, 50px);
+}
+
+#box3:hover {
+  transform: rotateX(45deg); /*ruota sull'asse delle x*/
+  transform: rotateY(360deg); /*ruota sull'asse delle y*/
+  transform: rotate(360deg);
+}
+
+#box4:hover {
+  transform: scale(0.5);
+  transform: scale(1.5);
+  transform: scaleY(0.5);
+}
+
+#box5 {
+  width: 150px;
+  height: 150px;
+  background-image: url(../MEDIA/instructor4.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#box5:hover {
+  transform: skew(25deg, 25deg);
+  transform: skewX(5deg);
+}
+
+#box6 {
+  transition: all 3s ease-in-out;
+  position: relative;
+  z-index: 10;
+}
+
+#box6:hover {
+  background-color: violet;
+  transform: translate(100px, 100px) rotate(360deg) scale(0.2);
+}

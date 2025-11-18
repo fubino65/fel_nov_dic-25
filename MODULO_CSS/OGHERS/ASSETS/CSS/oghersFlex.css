@@ -122,19 +122,27 @@ footer {
   background-repeat: no-repeat;
   background-position: center;
   color: #fff;
-  position: relative; /*serve per il position absolute dell'overlay*/
+  position: relative; /* serve per il position absolute dell'overlay */
   transition: all 1s ease;
 }
 
+/* Prova temporanea per vedere ::after e ::before
+#evidenzaSection > p::before {
+  content: 'prima ';
+}
+#evidenzaSection > p::after {
+  content: ' dopo';
+} */
+
 /* realizzazione di un overlay */
-#anteprimeSection article::after {
+#anteprimeSection article::before {
   content: '';
   position: absolute;
   /* right: 0;
   bottom: 0;*/
   top: 0;
   left: 0;
-  /* width e height a 100% sostiuiscono right e bottom a 0 */
+  /* width e height a 100% sostituiscono right e bottom a 0 */
   width: 100%;
   height: 100%;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%);
