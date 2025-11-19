@@ -5,11 +5,19 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Movimenti</title>
+        <!-- LIBRERIA ANIMATE.CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+        <!-- LIBRERIA WOW.JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
+            integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
         <link rel="stylesheet" href="ASSETS/CSS/movimenti.css">
     </head>
 
     <body>
-        <h1>Transizioni, trasformazioni e animazioni</h1>
+        <h1 class="animate__animated  animate__zoomIn">Transizioni, trasformazioni e animazioni</h1>
         <ul>
             <li>
                 <h2>Transizioni</h2>
@@ -40,10 +48,17 @@
                 </div>
             </li>
             <li>
-                <h2>Animazioni</h2>
+                <h2 class="animate__animated animate__slideInLeft wow">Animazioni</h2>
+                <div class="animazione-item slideDown">Slide Down</div>
+                <p>per altre animazioni vai a <a href="https://codepen.io/louisemoxy/pen/JYwLaJ"
+                        target="_blank">codepen</a></p>
             </li>
         </ul>
 
+        <div class="spacer"></div>
+        <script>
+            new WOW().init();
+        </script>
     </body>
 
 </html>
