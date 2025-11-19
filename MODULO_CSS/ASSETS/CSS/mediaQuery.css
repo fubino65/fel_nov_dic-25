@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 18px;
+}
+
+h1 {
+  font-size: clamp(2.22rem, 0.6692rem + 4.3077vw, 3.9rem);
+  font-style: oblique;
+}
+
+h2 {
+  font-size: 50px;
+}
+
+.mediaText {
+  display: flex;
+}
+.mediaText figure,
+.mediaText section {
+  border: 2px solid #000;
+  flex-basis: 50%;
+  background-color: var(--giallo-logo);
+}
+
+.mediaText figure img {
+  width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+#personeMT {
+  flex-direction: row-reverse;
+}
+@media screen and (width<=992px) {
+  .mediaText figure,
+  .mediaText section {
+    border: 2px solid blue;
+  }
+}
+
+@media screen and (width<=768px) {
+  .mediaText figure,
+  .mediaText section {
+    border: 2px solid greenyellow;
+  }
+}
+
+@media screen and (width<=576px) {
+  #personeMT,
+  #pesciMT {
+    flex-direction: column-reverse;
+    padding: 0 10px;
+  }
+
+  .mediaText figure,
+  .mediaText section {
+    border: 2px solid red;
+    flex-basis: 100%;
+  }
+}
+
+p {
+  line-height: 2rem;
+}
+
+table {
+  width: 60%;
+  height: 300px;
+
+  margin: auto;
+  margin-top: 300px;
+  margin-bottom: 300px;
+}
+
+table,
+tr,
+th,
+td {
+  border: 1px solid #000;
+  border-collapse: collapse; /*toglie la sdoppiatura della riga del bordo */
+}
+
+table caption {
+  font-size: 45px;
+  color: red;
+  font-style: oblique;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+table thead {
+  height: 50px;
+  background-color: lightpink;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: lightgray;
+}
+
+table tbody tr td {
+  padding: 0 10px;
+  text-align: center;
+}
+
+:root {
+  --colore-testo: #292929;
+  --marrone-logo: #874c53;
+  --giallo-logo: #f1be48;
+  --arancione-logo: #dc582a;
+}
