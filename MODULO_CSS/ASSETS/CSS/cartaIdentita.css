@@ -53,11 +53,16 @@ h1 {
   padding: 40px;
   border-left: 2px solid lightgray;
   border-right: 2px solid lightgray;
+  /* ora che conosciamo flexbox */
+  display: flex;
+  align-items: center;
 }
-#info figure,
+
+/* prima di conoscere flexbox */
+/* #info figure,
 #info section {
   display: inline-block;
-}
+} */
 
 #info figure {
   margin-right: 100px;
@@ -86,4 +91,12 @@ h1 {
 
 #info p {
   margin-bottom: 100px;
+}
+
+/* visibiità degli elementi */
+#nascondiVedi {
+  display: none; /*per nasconderlo senza che rimanga il suo ingombro */
+  display: inline; /*per visualizzarlo facendo attenzione a ri attribuirgli le caratteristiche che aveva prima di essere nascosto (in questo caso inline)*/
+  visibility: hidden; /*per nasconderlo ma mantenendo l'ingombro */
+  visibility: visible;
 }
