@@ -7,6 +7,9 @@ let stringa2 = 'ci sono 14 gradi';
 console.log("che temperatura c'è oggi a Milano?\n" + stringa1 + '. E in Sicilia? ' + stringa2);
 console.log("che temperatura c'è oggi a Milano? ", stringa1, '. E in Sicilia? ', stringa2);
 
+let stringa3 = ''; //stringa vuota
+stringa3 = ' '; //spazio vuoto
+
 //TEMPLATE LITERAL
 console.log(`questa è 
     un template literal`); //nota che posso spezzare la stringa
