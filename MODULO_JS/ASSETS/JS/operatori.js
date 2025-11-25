@@ -219,3 +219,78 @@ console.log(dividendo % divisore == 0 || divisore > 3); //il primo confronto è 
 
 console.log(!(dividendo % divisore == 0 || divisore > 3));
 console.log(!(divisore <= 3) || dividendo % divisore == 0);
+
+//TYPEOF restituisce una stringa che identifica il tipo di dato
+
+num1 = 10;
+console.log(typeof num1);
+console.log(typeof num1 == 'number');
+console.log(typeof num1 == 'string');
+
+bool = false;
+console.log(typeof bool);
+
+stringa = 'elefante';
+console.log(typeof stringa);
+console.log(typeof +stringa);
+stringa = '5';
+console.log(typeof stringa);
+console.log(typeof +stringa);
+
+//ESERCIZI
+//6. Data una variabile numerica verificare se è dispari
+num1 = 24;
+console.log('num1 è dispari? ', num1 % 2 == 1);
+console.log('num1 è dispari? ', num1 % 2 != 0);
+console.log('num1 è dispari? ', !(num1 % 2 == 0));
+
+//7. Date due variabili numeriche valutare se valore1 è maggiore di 0 e valore2 è minore di 20, oppure se valore1 è uguale a 5.
+num1 = 4;
+num2 = 15;
+console.log((num1 > 0 && num2 < 20) || num1 === 5); //le parentesi rosa non sono necessarie (perchè la && ha precedenza sul ||)ma sono cmq utili a comprendere più velocemente il senso del codice
+
+//8. Date due stringhe valutare se stringa1 non è vuota ("", '', ``) e stringa2 non è la parola "treno".
+let str1 = '000';
+let str2 = 'treno';
+
+console.log(!str1 == '' && str2 !== 'treno');
+console.log(str1 != '' && str2 !== 'treno');
+
+//9. Dati tre numeri valutare se: valore1 è maggiore di zero oppure valore2 è minore di venti. Queste condizioni devono verificarsi insieme a valore3 compreso tra 10 e 20.
+num1 = 4;
+num2 = 15;
+num3 = 21;
+
+console.log((num1 > 0 || num2 < 20) && num3 >= 10 && num3 <= 20);
+
+//guarda come cambia il risultato se tolgo le parentesi (o le sposto perchè il formattatore me le sposta sugli end)
+console.log(num1 > 0 || (num2 < 20 && num3 >= 10 && num3 <= 20));
+
+//10. Calcola e stampa le calorie giornaliere. Partendo da calorie = 0. Aggiungi le calorie di ogni pasto:
+
+// Colazione: 350 calorie
+// Spuntino: 100 calorie
+// Pranzo: 600 calorie
+// Cena: 500 calorie
+// Sport: calorie bruciate 400
+
+let calorieDie = 0;
+console.log('calorie dopo colazione = ' + (calorieDie += 350));
+console.log('calorie dopo spuntino = ' + (calorieDie += 100));
+console.log('calorie dopo pranzo = ' + (calorieDie += 600));
+console.log('calorie dopo cena = ' + (calorieDie += 500));
+console.log('calorie dopo sport (TOT CALORIE DEL GIORNO)) = ' + (calorieDie -= 400));
+
+//11. Immagina un videogioco nel quale parti con 10 danni. Raccogli potenziamenti:
+
+// Spada magica: raddoppia il danno
+// Pozione forza: aumenta di 15
+// Armatura pesante: riduce a metà
+// Stampa il danno finale.
+let danni = 10;
+console.log('danni dopo spada magica= ' + (danni *= 2));
+console.log('danni dopo pozione forza= ' + (danni += 15));
+console.log('danni dopo armatura pesante = ' + (danni /= 2));
+console.log('DANNO FINALE = ' + danni);
+
+//N.B. gli operatori di assegnazione composti non possono essere concatenati
