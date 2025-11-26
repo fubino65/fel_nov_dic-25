@@ -1,6 +1,6 @@
 //condizione ? valore_se_vero : valore_se_falso;
 
-let eta = 12;
+let eta = 100;
 
 console.log(eta >= 18 ? 'Maggiorenne' : 'Minorenne');
 
