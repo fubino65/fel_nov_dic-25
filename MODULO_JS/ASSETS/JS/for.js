@@ -70,8 +70,8 @@ console.log(pari);
 console.log(dispari);
 
 //3. Scrivere un ciclo che stampi la tabellina del 7 : 7x1 = 7
-// let base = '7';
-let base = prompt('scegli la base');
+let base = '7';
+// let base = prompt('scegli la base');
 if ((typeof base == 'number' || typeof base == 'string') && +base) {
   for (let i = 1; i <= 10; i++) {
     // console.log(base + ' x ' + i + ' = ' + base * i);
@@ -137,3 +137,61 @@ for (let i = 0; i < studenti.length; i++) {
 }
 console.log(rossi);
 console.log(bianchi);
+
+// FOR OF (solo per array e collection in generale)
+bianchi = [];
+rossi = [];
+
+for (let studente of studenti) {
+  let primaLettera = studente[0];
+
+  // if ((primaLettera >= 'A' && primaLettera <= 'J') || (primaLettera >= 'a' && primaLettera <= 'j')) {
+  if (primaLettera >= 'A' && primaLettera <= 'J') {
+    rossi[rossi.length] = studente; //la lunghezza di un array corrisponde anche al primo indice "libero" che possiamo utilizzare
+  } else {
+    bianchi[bianchi.length] = studente;
+  }
+}
+console.log(rossi);
+console.log(bianchi);
+
+let contatore = 1;
+for (let regione of regioni) {
+  console.log(contatore + ': ' + regione);
+  contatore++;
+}
+
+//Hai un array con i voti di una classe: [7, 5, 8, 6, 9, 4, 7, 8, 10, 6, 5, 9]
+// Usando un ciclo for...of:
+
+// Conta quanti studenti hanno la sufficienza (voto >= 6)
+// Conta quanti hanno l'insufficienza (voto < 6)
+// Calcola la media dei voti
+// Stampa tutti i risultati alla fine
+
+let voti = [7, 5, 8, 6, 9, 4, 7, 8, 10, 6, 5, 9];
+
+somma = 0;
+let suff = 0;
+let insuff = 0;
+for (const voto of voti) {
+  voto >= 6 ? suff++ : insuff++;
+  somma += voto;
+}
+console.log('media voti = ' + somma / voti.length);
+console.log('studenti insufficienti = ' + insuff);
+console.log('studenti sufficienti = ' + suff);
+
+//OPPURE
+
+suff = 0;
+insuff = 0;
+for (const voto of voti) {
+  if (voto >= 6) {
+    suff++;
+  }
+  somma += voto;
+}
+console.log('media voti = ' + somma / voti.length);
+console.log('studenti insufficienti = ' + (voti.length - suff));
+console.log('studenti sufficienti = ' + suff);
