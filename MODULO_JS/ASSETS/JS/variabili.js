@@ -37,3 +37,11 @@ console.log('vale ', num1);
 console.log('io mi chiamo fulvia');
 
 let stagione; //il suo valore qui è undefined
+
+//COSTANTI
+//vanno dichiarate e inizializzate contestualmente
+//per convenzione si scrivono tutte maiuscole
+const GIALLO_ALA = '#36546g';
+const MAX_WIDTH = '200';
+// const MIN_WIDTH; non si può fare
+// MIN_WIDTH=100;
