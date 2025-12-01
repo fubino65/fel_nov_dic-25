@@ -154,7 +154,8 @@ let msg = 'indovina il numero magico (fra 0 e 6)';
 //DO WHILE
 //rifacciamo l'ultimo esercizio utilizzando il do while
 
-numeroDaIndovinare = 3;
+// numeroDaIndovinare = 3;
+numeroDaIndovinare = generaNumeroCasualeInRange(0, 6);
 
 msg = 'indovina il numero magico (fra 0 e 6)';
 let scelta2 = '';
