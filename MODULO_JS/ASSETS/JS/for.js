@@ -121,6 +121,29 @@ let studenti = [
   'Bellini'
 ];
 
+studenti = [
+  'Roberti',
+  'ferrari',
+  'Esposito',
+  'Jianchi',
+  'ricci',
+  'Conti',
+  'Kusso',
+  'costa',
+  'Rizzo',
+  'Fontana',
+  'Moretti',
+  'Fabbri',
+  'sanna',
+  'Neri',
+  'Costantini',
+  'Sorentino',
+  'Ruggero',
+  'Pagano',
+  'Vitali',
+  'Bellini'
+];
+
 let bianchi = [],
   rossi = [];
 
@@ -129,7 +152,8 @@ for (let i = 0; i < studenti.length; i++) {
   let primaLettera = studente[0];
 
   // if ((primaLettera >= 'A' && primaLettera <= 'J') || (primaLettera >= 'a' && primaLettera <= 'j')) {
-  if (primaLettera >= 'A' && primaLettera <= 'J') {
+  // if (primaLettera >= 'A' && primaLettera <= 'J') {
+  if (primaLettera.toUpperCase() >= 'A' && primaLettera.toUpperCase() <= 'J') {
     rossi[rossi.length] = studente; //la lunghezza di un array corrisponde anche al primo indice "libero" che possiamo utilizzare
   } else {
     bianchi[bianchi.length] = studente;
