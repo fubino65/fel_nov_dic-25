@@ -56,3 +56,14 @@ cambiaColoreBtn.addEventListener('click', function () {
     cambiaColoreBtn.textContent = 'Bluizza il titolo';
   }
 });
+
+//Con arrow function
+cambiaColoreBtn.addEventListener('click', e => {
+  if (titoloPrincipale.style.color == 'green') {
+    titoloPrincipale.style.color = 'blue';
+    cambiaColoreBtn.textContent = 'Verdizza il titolo';
+  } else {
+    titoloPrincipale.style.color = 'green';
+    cambiaColoreBtn.textContent = 'Bluizza il titolo';
+  }
+});
