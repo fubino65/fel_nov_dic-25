@@ -153,3 +153,14 @@ fiori = ['ciclamino', 'orchidea', 'margherita', 'rosa'];
 console.log(concatenaArray2(fiori));
 console.log(concatenaArray2(fiori, ' | '));
 console.log(concatenaArray2([2, 5, 7, 9, 77, 22, 4], ' - '));
+
+//FUNZIONI CHE ACCETTANO UN NUMERO VARIABILE DI ARGOMENTI (spread operator)
+function somma(...numeri) {
+  let result = 0;
+  for (const numero of numeri) {
+    result += numero;
+  }
+  return result;
+}
+
+console.log(somma(2, 3, 5, 4, 8, 6, 7, 11));
