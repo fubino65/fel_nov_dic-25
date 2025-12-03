@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  color: blue;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: red;
+}
+
+p,
+h2 {
+  margin-bottom: 10px;
+}
+
+#primaSect {
+  border: 1px solid #000;
+}
