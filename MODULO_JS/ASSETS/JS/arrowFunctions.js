@@ -43,6 +43,7 @@ console.log(isPalindroma('otto'));
 console.log(isPalindroma('geronimo'));
 console.log(isPalindroma(''));
 
+//SOLUZIONE 2
 const palindroma = parola => {
   let conv = parola.toLowerCase().replaceAll(' ', '');
 
@@ -52,7 +53,47 @@ const palindroma = parola => {
   return true;
 };
 
-console.log(palindroma('annatttt'));
+console.log(palindroma('anna'));
+
+//SOLUZIONE 3
+const isPalindroma2 = parola => {
+  // Caso base: parola vuota o con un solo carattere è palindroma
+  if (parola.length <= 1) {
+    return true;
+  }
+
+  // Confronta primo e ultimo carattere
+  if (parola[0].toLowerCase() !== parola[parola.length - 1].toLowerCase()) {
+    return false;
+  }
+
+  // Ricorsione sulla sottostringa senza primo e ultimo carattere
+  return isPalindroma2(parola.slice(1, -1));
+};
+
+console.log(isPalindroma2('Anna'));
+console.log(isPalindroma2('otto'));
+console.log(isPalindroma2('geronimo'));
+console.log(isPalindroma2(''));
+
+//SOLUZIONE 4
+const isPalindrome = (word, start = 0, end = word.length - 1) => {
+  // Caso base: i puntatori si sono incrociati o incontrati
+  if (start >= end) {
+    return true;
+  }
+  // Confronta carattere all'inizio e alla fine
+  if (word[start].toLowerCase() !== word[end].toLowerCase()) {
+    return false;
+  }
+  // Ricorsione spostando i puntatori verso il centro
+  return isPalindrome(word, start + 1, end - 1);
+};
+
+console.log(isPalindrome('treno'));
+console.log(isPalindrome('Anna'));
+console.log(isPalindrome('otto'));
+console.log(isPalindrome(''));
 
 //4. Scrivi una arrow function che prenda due parametri, una parola e una lunghezza, e restituisca true se la parola è più lunga della lunghezza specificata, altrimenti restituisca false.
 let isPiuLunga = (parola, lungh) => parola.length > lungh;
@@ -89,3 +130,9 @@ const isArrCrescente2 = arr => {
 console.log(isArrCrescente2([1, 2, 3, 4, 5]));
 console.log(isArrCrescente2([-100, -40, 1, 2, 3, 4, 5]));
 console.log(isArrCrescente2([-100, -40, 1, 2, 5, 4, 5]));
+
+//OPPURE GIANFRANCO
+const numCrescenti = [0, 8, 9, 12];
+const isnumCrescenti = arr => arr.findIndex((numero, indice) => numero <= arr[indice - 1]) === -1;
+//il metodo findIndex ritorna -1 se non trova nemmeno un numero inferiore al suo precedente. Quindi se ritorna -1 vuol dire che tutti i numeri sono in ordine crescente
+console.log(`Array Crescente: ${isnumCrescenti(numCrescenti)}`);
