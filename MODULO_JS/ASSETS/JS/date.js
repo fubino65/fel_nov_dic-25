@@ -53,3 +53,42 @@ console.log(natale25.toLocaleDateString('it-IT'));
 console.log(natale25.toLocaleDateString('en-US'));
 
 //todo options
+let options = {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+};
+//N.B. nella data formattata vedo solo quello che ho definito nelle options (se le utilizzo come secondo parametro). Quello che non definisco non viene incluso nella data formattata
+
+console.log(natale25.toLocaleDateString('it-IT', options));
+console.log(natale25.toLocaleDateString('en-US', options));
+console.log(natale25.toLocaleDateString('en-UK', options));
+console.log(natale25.toLocaleDateString('fr-FR', options));
+
+//FORMATTAZIONE DEGLI ORARI
+console.log(new Date(inizioPausa).toLocaleTimeString('it-IT'));
+
+let timeOptions = {
+  hour: '2-digit',
+  minute: '2-digit',
+  second: 'numeric'
+};
+console.log(new Date(inizioPausa).toLocaleTimeString('it-IT', timeOptions));
+console.log(new Date(inizioPausa).toLocaleTimeString('en-US', timeOptions));
+console.log(new Date(inizioPausa).toLocaleTimeString('fr-FR', timeOptions));
+console.log(new Date(inizioPausa).toLocaleTimeString('de-CH', timeOptions));
+
+//FORMATTAZIONE DATA E ORARIO
+console.log(new Date(inizioPausa).toLocaleString('it-IT'));
+options = {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit',
+  second: 'numeric'
+};
+console.log(new Date(inizioPausa).toLocaleString('it-IT', options));
+//per approfondire come configurare le options https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#options

@@ -1,0 +1,33 @@
+#forma {
+  display: flex;
+  justify-content: center;
+}
+
+#forma div {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+#codiceColore {
+  text-align: center;
+}
+#buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+#buttons button {
+  width: 80px;
+  height: 40px;
+  border-radius: 7px;
+}
+
+#blueBtn {
+  background-color: #1e1e74;
+}
+
+#redBtn {
+  background-color: #e23030;
+}
