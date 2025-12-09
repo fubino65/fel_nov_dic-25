@@ -162,7 +162,7 @@ for (let i = 0; i < studenti.length; i++) {
 console.log(rossi);
 console.log(bianchi);
 
-// FOR OF (solo per array e collection in generale)
+//**************** FOR OF (solo per array e collection in generale) ***********
 bianchi = [];
 rossi = [];
 
@@ -219,3 +219,29 @@ for (const voto of voti) {
 console.log('media voti = ' + somma / voti.length);
 console.log('studenti insufficienti = ' + (voti.length - suff));
 console.log('studenti sufficienti = ' + suff);
+
+//**************** FOR IN (solo per oggetti ) ***********
+let casa = {
+  tipologia: 'Casale in campagna vicino al mare',
+  vani: 5,
+  metratura: 100,
+  bagni: 2,
+  hasPiscina: false,
+  terrazzo: 1,
+  balconi: 2,
+  box: 1,
+  hasCantina: true,
+  annuncio: function () {
+    return `${casa.tipologia} numero vani: ${this.vani} distribuiti su una metratura di ${
+      this.metratura
+    }mq, numero bagni: ${this.bagni}, ${this.hasPiscina ? 'dotato di piscina, ' : ''} `;
+  }
+};
+
+//cicla sulle proprietà dell'oggetto casa
+for (const prop in casa) {
+  if (typeof casa[prop] != 'function') {
+    //escludo i metodi
+    console.log(prop + ': ' + casa[prop]);
+  }
+}
