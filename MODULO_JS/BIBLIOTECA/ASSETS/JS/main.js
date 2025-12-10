@@ -3,6 +3,7 @@ const MSG_OBBLIGATORIO = 'Campo obbligatorio';
 const LUNGH_CODICE = 3;
 //const CODICE_REGEX = /^\d{3}$/;
 const CODICE_REGEX = new RegExp(`^\\d{${LUNGH_CODICE}}$`);
+const LS_LIBRI_KEY = 'biblioteca';
 
 //ELEMENTI DEL DOM
 const form = document.querySelector('form');
@@ -12,9 +13,12 @@ const tabella = document.querySelector('table tbody');
 
 //ALTRE VARIABILI
 let isValid = true;
-let libri = [];
-let libroTest = new Libro('titolo1', 'autore1', '777', '');
-libri.push(libroTest);
+let fromLS = JSON.parse(localStorage.getItem(LS_LIBRI_KEY));
+let libri = fromLS ? fromLS : []; //se nel local storage per la nostra chiave non c'è nulla libri sarà array vuoto, altrimenti sarà popolato con gli oggetti salvati nel ls
+console.log(libri);
+
+libri.forEach(libro => popolaRigaTabella(libro));
+
 //GESTIONE EVENTI
 
 form.addEventListener('submit', e => {
@@ -37,16 +41,12 @@ form.addEventListener('submit', e => {
       //se non esiste creo un oggetto libro, lo aggiungo all'array dei libri, aggiungo una riga alla tabella, metto l'array dei libri nel local storage, svuoto il form e rimetto il focus sul titolo
       let libro = new Libro(form.titolo.value.trim(), form.autore.value.trim(), form.codice.value, form.genere.value);
       libri.push(libro);
-      //TODO LS
+
+      //METTO L'ARRAY DI LIBRI NEL LOCAL STORAGE
+      localStorage.setItem(LS_LIBRI_KEY, JSON.stringify(libri));
 
       //AGGIUNGO RIGA TABELLA
-      let riga = tabella.insertRow();
-      console.log(riga);
-      riga.insertCell().innerText = libro.titolo;
-      riga.insertCell().innerText = libro.autore;
-      riga.insertCell().innerText = libro.codice;
-      riga.insertCell().innerText = libro.genere;
-
+      popolaRigaTabella(libro);
       //SVUOTO IL FORM
       form.reset();
       form.titolo.focus();
@@ -68,6 +68,14 @@ function validaCampo(campo) {
   campo.nextElementSibling.textContent = msg; //sia che il campo sia valido o non lo sia viene sempre valorizzato lo span di errore. Se è valido viene valorizzato con stringa vuota, altrimenti con il messaggio di errore.
 }
 
+function popolaRigaTabella(libro) {
+  let riga = tabella.insertRow();
+  riga.insertCell().innerText = libro.titolo;
+  riga.insertCell().innerText = libro.autore;
+  riga.insertCell().innerText = libro.codice;
+  riga.insertCell().innerText = libro.genere;
+}
+
 //COSTRUTTORI
 function Libro(titolo, autore, codice, genere) {
   this.titolo = titolo;
@@ -75,9 +83,3 @@ function Libro(titolo, autore, codice, genere) {
   this.codice = codice;
   this.genere = genere;
 }
-
-localStorage.setItem('prova', 'stringa salvata nel ls');
-console.log(localStorage.getItem('prova'));
-
-localStorage.setItem('libri', 33);
-console.dir(localStorage.getItem('libri'));
