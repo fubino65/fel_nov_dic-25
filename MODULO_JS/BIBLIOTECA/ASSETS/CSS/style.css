@@ -4,4 +4,23 @@
   margin: 0;
 }
 
-form .formRow
+form .formRow {
+  padding: 7px 15px;
+}
+
+.error {
+  color: red;
+  font-size: small;
+  font-weight: bold;
+}
+
+table,
+tr,
+th,
+td {
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
+table {
+  margin: 15px;
+}
