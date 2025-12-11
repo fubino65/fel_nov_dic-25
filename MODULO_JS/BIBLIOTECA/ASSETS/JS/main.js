@@ -4,17 +4,20 @@ const LUNGH_CODICE = 3;
 //const CODICE_REGEX = /^\d{3}$/;
 const CODICE_REGEX = new RegExp(`^\\d{${LUNGH_CODICE}}$`);
 const LS_LIBRI_KEY = 'biblioteca';
+const campiDaValidare = document.querySelectorAll('.daValidare');
 
 //ELEMENTI DEL DOM
 const form = document.querySelector('form');
 // const titolo = document.getElementById('titolo'); N.B. gli elementi di un form possono essere selezionati singolarmente come in questo caso, oppure presi dal form con form.nomeCampo
 const esito = document.getElementById('esito');
 const tabella = document.querySelector('table tbody');
+const cancellaTutto = document.getElementById('deleteAll');
+const inputs = document.querySelectorAll('input[type="text"], select');
 
 //ALTRE VARIABILI
 let isValid = true;
-let fromLS = JSON.parse(localStorage.getItem(LS_LIBRI_KEY));
-let libri = fromLS ? fromLS : []; //se nel local storage per la nostra chiave non c'è nulla libri sarà array vuoto, altrimenti sarà popolato con gli oggetti salvati nel ls
+
+let libri = localStorage.getItem(LS_LIBRI_KEY) ? JSON.parse(localStorage.getItem(LS_LIBRI_KEY)) : []; //se nel local storage per la nostra chiave non c'è nulla libri sarà array vuoto, altrimenti sarà popolato con gli oggetti salvati nel ls
 console.log(libri);
 
 libri.forEach(libro => popolaRigaTabella(libro));
@@ -27,9 +30,13 @@ form.addEventListener('submit', e => {
   e.preventDefault(); //mette in stand by la submit (non fa richiamare la action)
   //verifico che il titolo sia valorizzato
 
-  validaCampo(form.titolo);
-  validaCampo(form.autore);
-  validaCampo(form.codice);
+  for (const campo of campiDaValidare) {
+    validaCampo(campo);
+  }
+
+  // validaCampo(form.titolo);
+  // validaCampo(form.autore);
+  // validaCampo(form.codice);
 
   //come faccio a sapere se devo proseguire?
   if (isValid) {
@@ -54,6 +61,40 @@ form.addEventListener('submit', e => {
   }
 });
 
+for (const campo of campiDaValidare) {
+  campo.addEventListener('change', () => validaCampo(campo));
+}
+
+cancellaTutto.addEventListener('click', () => {
+  //cancellare righe tbody tabella
+  console.log(tabella.rows.length);
+  tabella.innerHTML = '';
+
+  //SOLUZIONI CON I CICLI
+  // while (tabella.rows.length >= 0) {
+  //   tabella.deleteRow(0);
+  // }
+
+  // for (let i = tabella.rows.length - 1; i >= 0; i--) {
+  //   tabella.deleteRow(i);
+  // }
+
+  //svuotare l'array libri
+  libri = [];
+  //allineare il ls
+  // localStorage.setItem(LS_LIBRI_KEY, libri);
+  //localStorage.clear(); //svuota l'intero ls
+  localStorage.removeItem(LS_LIBRI_KEY); //i tre metodi in questo caso sono equivalenti
+});
+
+for (const campo of inputs) {
+  campo.addEventListener('focus', () => {
+    campo.classList.add('sfondoCampoFocused');
+  });
+  campo.addEventListener('blur', () => {
+    campo.classList.remove('sfondoCampoFocused');
+  });
+}
 //ALTRE FUNZIONI
 function validaCampo(campo) {
   let msg = ''; //inizializzo la variabile ma anche resetto i messaggi di errore qualora siano presenti
