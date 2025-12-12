@@ -11,19 +11,49 @@
 
     <body>
         <header class="container-fluid">
-            <section class="row text-bg-dark">
-                <div class="col">
+            <section class="row text-bg-dark px-5 py-3 text-center">
+                <div class="col-md-4  text-md-start text-uppercase">
                     I Cornettari
                 </div>
-                <nav class="col">
+                <nav class="col-md-8  text-md-end">
                     Home | Servizi | Chi siamo | Blog
                 </nav>
             </section>
         </header>
         <main>
-
+            <section class="container my-1 my-sm-3 my-lg-5">
+                <section class="row">
+                    <section class="col text-bg-success py-2">
+                        <h1 class="text-center">Titolo</h1>
+                        <h2 class="text-center">Sottotitolo</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde deleniti veritatis distinctio
+                            tempore commodi rerum. Nemo tempore numquam blanditiis earum quam, ipsa, expedita et velit,
+                            recusandae nam reiciendis sapiente labore?
+                        </p>
+                    </section>
+                    <section
+                        class="col d-none col-lg-4 d-lg-flex justify-content-center align-items-center text-uppercase fs-3 text-bg-danger">
+                        Barra laterale
+                    </section>
+                </section>
+            </section>
         </main>
         <footer class="container-fluid">
+            <section class="row text-bg-dark px-5 py-3 text-center">
+                <section class="col-md-10 col-xl-11 text-md-start text-uppercase">
+                    &copy;2025 - I cornettari
+                </section>
+                <nav class="col d-md-none"><!-- visibile sotto md  -->
+                    Home | Servizi | Chi siamo | Blog
+                </nav>
+                <nav class="col-md-2 col-xl-1 d-none d-md-flex flex-md-column border border-2 rounded-2 ">
+                    <!-- visibile oltre md  -->
+                    <span>Home</span>
+                    <span>Servizi</span>
+                    <span>Chi siamo</span>
+                    <span>Blog</span>
+                </nav>
+            </section>
 
         </footer>
     </body>
